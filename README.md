@@ -11,11 +11,11 @@ Before to dive into 3D CNN, let's summarize together what we know about ConvNets
 	
     * The classifier: this part of the network takes as input the previous computed features and use them to predict the correct label.
 	
-![file architecture](/image/convolutional_neural_network.png?raw=true)
+![file architecture](/images/convolutional_neural_network.png?raw=true)
 	
 In order to extract such features, ConvNets use 2D convolution operations. 
 
-![conv2D](/image/conv2D.gif)
+![conv2D](/images/conv2D.gif)
 
 ## Why do we need a 3D CNN ?
 
@@ -23,4 +23,4 @@ Tranditionally, ConvNets are targeting RGB images (3 channels). The goal of 3D C
 
 In order to extract such feature, 3D convolution use 3Dconvolution operations. 
 
-![conv3D](/image/conv3D.gif)
+![conv3D](/images/conv3D.gif)
