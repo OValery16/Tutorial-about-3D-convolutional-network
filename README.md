@@ -29,12 +29,12 @@ In order to extract such feature, 3D convolution use 3Dconvolution operations.
 
 There are several existing approaches to tackle the video classification. This is a non exaustive list of existing approaches:
 
-	* ConvNets + LSTM cell: Extract features from each frame with a ConvNet, passing the sequence to an RNN, in a separate network
-	[paper](https://arxiv.org/abs/1411.4389), [Tutorial on Keras ](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
-	
-	* Temporal Relation Networks: Extract features from each frame with a ConvNet and pass the sequence to an MLP [paper](https://arxiv.org/pdf/1711.08496.pdf) [Github](https://github.com/metalbubble/TRN-pytorch)
-	
-	* Two-Stream Convolutional Networks: Use 2 CNN, 1 spatial stream ConvNet which process one single frame at a time, and 1 Temporal stream ConvNet which process multi-frame optical flow [paper](http://papers.nips.cc/paper/5353-two-stream-convolutional-networks-for-action-recognition-in-videos.pdf) [Github](https://github.com/wushidonguc/two-stream-action-recognition-keras)
+* ConvNets + LSTM cell: Extract features from each frame with a ConvNet, passing the sequence to an RNN, in a separate network
+[paper](https://arxiv.org/abs/1411.4389), [Tutorial on Keras ](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
+
+* Temporal Relation Networks: Extract features from each frame with a ConvNet and pass the sequence to an MLP [paper](https://arxiv.org/pdf/1711.08496.pdf) [Github](https://github.com/metalbubble/TRN-pytorch)
+
+* Two-Stream Convolutional Networks: Use 2 CNN, 1 spatial stream ConvNet which process one single frame at a time, and 1 Temporal stream ConvNet which process multi-frame optical flow [paper](http://papers.nips.cc/paper/5353-two-stream-convolutional-networks-for-action-recognition-in-videos.pdf) [Github](https://github.com/wushidonguc/two-stream-action-recognition-keras)
 
 ## What is the main drawback of 3D CNN ?
 
