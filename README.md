@@ -54,7 +54,7 @@ Before to start implementing any network, I advice you to take a quick look of t
 
 As for traditional 2D ConvNet, we net use a set of convolution, max pooling operations to reduce layer after layer the size the of our input data. In this tutorial, the shape of our input is [number of training example in a batch, number of chanel, number of image in the video, the height, the width]
 
-The goal is to reduce slowly the graphical dimention (the height and the width) and the temporal dimention (number of image in the video) until you get a vector of dimention [number of training example in a batch, number of chanel, 1, 1, 1]. After that you send this vector to a multi-layers classifier.
+The goal is to reduce slowly the graphical dimention (the height and the width) and the temporal dimention (number of image in the video) until you get a vector of dimention [number of training example in a batch, number of chanel, 1, 1, 1]. After that, you send this vector to a multi-layers classifier.
 
 ## Overfitting
 
@@ -64,5 +64,8 @@ In order to reduce the overfitting, I used 3 techniques:
 * Dropout: the idea of this technique, basically we want to trade training performance for more generalization. Basically during training some fractions of the neurons on a particular layer will be randomly deactivated. This improve generalization because force your layer to learn with different neurons the same "concept".
 * Batch normalization: this technique performs feature scaling and improves gradient flow. It often plays a small in the regularization.
 	
+## Optimizer
 
+In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence. However, the reader should keep in mind that other experimences have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
+ 
 
