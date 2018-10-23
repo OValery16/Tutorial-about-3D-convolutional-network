@@ -23,4 +23,46 @@ Tranditionally, ConvNets are targeting RGB images (3 channels). The goal of 3D C
 
 In order to extract such feature, 3D convolution use 3Dconvolution operations. 
 
-![conv3D](/images/3Dconv.gif)
+![conv3D](/images/3dconv.gif)
+
+## Is 3D CNN the only solution to video classification ?
+
+There are several existing approaches to tackle the video classification. This is a non exaustive list of existing approaches:
+
+	* ConvNets + LSTM cell: Extract features from each frame with a ConvNet, passing the sequence to an RNN, in a separate network
+	[paper](https://arxiv.org/abs/1411.4389), [Tutorial on Keras ](https://machinelearningmastery.com/cnn-long-short-term-memory-networks/)
+	
+	* Temporal Relation Networks: Extract features from each frame with a ConvNet and pass the sequence to an MLP [paper](https://arxiv.org/pdf/1711.08496.pdf) [Github](https://github.com/metalbubble/TRN-pytorch)
+	
+	* Two-Stream Convolutional Networks: Use 2 CNN, 1 spatial stream ConvNet which process one single frame at a time, and 1 Temporal stream ConvNet which process multi-frame optical flow [paper](http://papers.nips.cc/paper/5353-two-stream-convolutional-networks-for-action-recognition-in-videos.pdf) [Github](https://github.com/wushidonguc/two-stream-action-recognition-keras)
+
+## What is the main drawback of 3D CNN ?
+
+From my point of view, there are two main drawbacks compared to the other methods:
+
+* We don't take advantage of previously trained 2D networks (Inception Net, Resnet ...) to extract the video features. This problem is not as important as before recently because several strong 3D CNNs have been build which use similar design pattern as the 2D version ([paper](https://arxiv.org/abs/1711.09577)).
+
+* The memory: 3D CNNs often use more GPU memory as the traditional 2D CNN. This problem is not as important as before because GPUs tend to have more and more memory.
+
+## The dataset
+
+For this tutorial, we will use the [20BN-jester Dataset V1](https://20bn.com/datasets/jester). The 20BN-JESTER dataset is a large collection of densely-labeled video clips that show humans performing pre-definded hand gestures in front of a laptop camera or webcam. You can download it on their website.
+
+Before to start implementing any network, I advice you to take a quick look of the video (set of images). It is essential that you understand what you need to predict.
+
+## The network
+
+As for traditional 2D ConvNet, we net use a set of convolution, max pooling operations to reduce layer after layer the size the of our input data. In this tutorial, the shape of our input is [number of training example in a batch, number of chanel, number of image in the video, the height, the width]
+
+The goal is to reduce slowly the graphical dimention (the height and the width) and the temporal dimention (number of image in the video).
+
+## Overfitting
+
+In order to reduce the overfitting, I used 3 techniques:
+
+	* Data augmentation: we augment the amount of training data via random affine transformation (RandomAffine(degrees=[-10, 10], translate=[0.15, 0.15]))
+	* Dropout: the idea of this technique, basically we want to trade training performance for more generalization. Basically during training some fractions of the neurons on a particular layer will be randomly deactivated. This improve generalization because force your layer to learn with different neurons the same "concept".
+	* Batch normalization: this technique performs feature scaling and improves gradient flow. It often plays a small in the regularization.
+	
+
+
