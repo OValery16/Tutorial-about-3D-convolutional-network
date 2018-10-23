@@ -66,6 +66,6 @@ In order to reduce the overfitting, I used 3 techniques:
 	
 ## Optimizer
 
-In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence. However, the reader should keep in mind that other experimences have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
+In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence of my model. However, the reader should keep in mind that other experimences have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
  
 
