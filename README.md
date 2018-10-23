@@ -6,10 +6,10 @@ For me, the Artificial Intelligence is like a passion and I am trying to use it 
 
 Before to dive into 3D CNN, let's summarize together what we know about ConvNets. ConvNets consists mainly in 2 parts:
 	
-	* The feature extractor: this part of the network takes as input the image and extract the features that are meaningful for its classifcation. It amplify aspects of the input that are important for discrimination and suppress irrelevant variations. Usually, the feature extractor consists of several layers.	For instance, an image which could be seen as an array of pixel values. The first layer often learn representations that represent the presence or absence of edges at particular orientations and locations in the image. The second layer typically detects motifs by spotting particular arrangements of edges, regardless of small variations in the edge positions. Finaly the third layer may assemble motifs into larger combinations that correspond to parts of familiar objects, and subsequent layers would detect objects as combinations of these parts. 
-	
-	
-    * The classifier: this part of the network takes as input the previous computed features and use them to predict the correct label.
+* The feature extractor: this part of the network takes as input the image and extract the features that are meaningful for its classifcation. It amplify aspects of the input that are important for discrimination and suppress irrelevant variations. Usually, the feature extractor consists of several layers.	For instance, an image which could be seen as an array of pixel values. The first layer often learn representations that represent the presence or absence of edges at particular orientations and locations in the image. The second layer typically detects motifs by spotting particular arrangements of edges, regardless of small variations in the edge positions. Finaly the third layer may assemble motifs into larger combinations that correspond to parts of familiar objects, and subsequent layers would detect objects as combinations of these parts. 
+
+
+* The classifier: this part of the network takes as input the previous computed features and use them to predict the correct label.
 	
 ![CNN](/images/convolutional_neural_network.png?raw=true)
 	
@@ -66,6 +66,6 @@ In order to reduce the overfitting, I used 3 techniques:
 	
 ## Optimizer
 
-In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence of my model. However, the reader should keep in mind that other experimences have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
+In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence of my model. However, the reader should keep in mind that other experimences (from other users) have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
  
 
