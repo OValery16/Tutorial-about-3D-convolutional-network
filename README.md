@@ -15,7 +15,7 @@ Before to dive into 3D CNN, let's summarize together what we know about ConvNets
 	
 In order to extract such features, ConvNets use 2D convolution operations. 
 
-![file architecture](/image/conv2D.gif?raw=true)
+![conv2D](/image/conv2D.gif)
 
 ## Why do we need a 3D CNN ?
 
@@ -23,4 +23,4 @@ Tranditionally, ConvNets are targeting RGB images (3 channels). The goal of 3D C
 
 In order to extract such feature, 3D convolution use 3Dconvolution operations. 
 
-![file architecture](/image/conv3D.gif?raw=true)
+![conv3D](/image/conv3D.gif)
