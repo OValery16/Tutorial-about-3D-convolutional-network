@@ -102,5 +102,11 @@ Below you can find the training curves obtained via tensorboard.
 
 ![training_loss](/images/val_loss.PNG) ![training_top1](/images/val_acc.PNG) ![training_top5](/images/val_acc_top5.PNG)
 
+## Important remark
+
+Code based off this [GulpIO-benchmarks](https://github.com/TwentyBN/GulpIO-benchmarks) implementation.
+
+If you like you like this project, feel free to leave a star. (it is my only reward ^^)
+
  
 
