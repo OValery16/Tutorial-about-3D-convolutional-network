@@ -67,5 +67,20 @@ In order to reduce the overfitting, I used 3 techniques:
 ## Optimizer
 
 In this tutorial, we use the Adam optimizer with the AMSGRAD optimization described in this [paper](https://openreview.net/pdf?id=ryQu7f-RZ). Empirically, it tends to improve the convergence of my model. However, the reader should keep in mind that other experimences (from other users) have shown that the AMSGRAD optimization could also lead to worse performance than ADAM.
+
+## Vizualization tool
+
+For vizualizing the result, I like to use tensorboard. Since tensorboard is not avalable by default on Pytorch, I used tensorboardX which enable Pytorch to use tensorboard.
+
+## Results
+
+For this network, I got a accuracy of 85% for the validation set. Since there is an accuracy gap between the training set and the validation set, there are plenty room for improvements.
+
+Below you can find the training curves obtained via tensorboard.
+
+![training_loss](/images/training_loss.png) ![training_top1](/images/training_top1.png) ![training_top5](/images/training_top5.png)
+
+![training_loss](/images/val_loss.png) ![training_top1](/images/val_acc.png) ![training_top5](/images/val_acc_top5.png)
+
  
 
