@@ -72,13 +72,33 @@ In this tutorial, we use the Adam optimizer with the AMSGRAD optimization descri
 
 For vizualizing the result, I like to use tensorboard. Since tensorboard is not avalable by default on Pytorch, I used tensorboardX which enable Pytorch to use tensorboard.
 
+## How to run this code ?
+
+First, you have to set up the config file accordingly (define the right path, the name of your model ...). After you just need to run:
+
+```python train.py --config configs/config.json -g 0```
+
+For the prediction, run:
+
+```python train.py --eval_only True --resume True --config configs/config.json -g 0```
+
+-g: the ID of the gpu you are using. If you are using multiple GPU, you can write:
+
+```python train.py --config configs/config.json -g 0,1```
+
+Note: this code works well for python 3.6 and with pytorch 0.4.
+
 ## Results
 
 For this network, I got a accuracy of 85% for the validation set. Since there is an accuracy gap between the training set and the validation set, there are plenty room for improvements.
 
 Below you can find the training curves obtained via tensorboard.
 
+### Training
+
 ![training_loss](/images/training_loss.PNG) ![training_top1](/images/training_top1.PNG) ![training_top5](/images/training_top5.PNG)
+
+### Validation
 
 ![training_loss](/images/val_loss.PNG) ![training_top1](/images/val_acc.PNG) ![training_top5](/images/val_acc_top5.PNG)
 

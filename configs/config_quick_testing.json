@@ -1,0 +1,26 @@
+{
+    "model_name": "jester_conv_4_classes",
+    "checkpoint": "trainings/jpeg_model/jester_conv_4_classes/checkpoint.pth.tar",
+
+    "train_data_folder": "./20bn-jester-v1/videos",
+    "val_data_folder": "./20bn-jester-v1/videos",
+    "train_data_csv": "./20bn-jester-v1/annotations/jester-v1-train-quick-testing.csv",
+    "val_data_csv": "./20bn-jester-v1/annotations/jester-v1-validation-quick-testing.csv",
+    "labels_csv": "./20bn-jester-v1/annotations/jester-v1-labels-quick-testing.csv",
+
+    "num_workers": 8,
+
+    "output_dir": "trainings/jpeg_model/",
+
+    "num_classes": 5,
+    "batch_size": 10,
+    "clip_size": 18,
+    "nclips": 1,
+    "step_size": 2,
+    "lr": 0.001,
+    "last_lr": 0.00001,
+    "momentum": 0.9,
+    "weight_decay": 0.00001,
+    "num_epochs": 1,
+    "print_freq": 100
+}

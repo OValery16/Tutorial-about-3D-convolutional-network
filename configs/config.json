@@ -1,0 +1,26 @@
+{
+    "model_name": "jester_conv6",
+    "checkpoint": "trainings/jpeg_model/jester_conv6/checkpoint.pth.tar",
+
+    "train_data_folder": "/20bn-jester-v1/",
+    "val_data_folder": "/20bn-jester-v1/",
+    "train_data_csv": "20bn-jester-v1/annotations/jester-v1-train.csv",
+    "val_data_csv": "20bn-jester-v1/annotations/jester-v1-validation.csv",
+    "labels_csv": "20bn-jester-v1/annotations/jester-v1-labels.csv",
+
+    "num_workers": 9,
+
+    "output_dir": "trainings/jpeg_model/",
+
+    "num_classes": 27,
+    "batch_size": 100,
+    "clip_size": 18,
+    "nclips": 1,
+    "step_size": 2,
+    "lr": 0.001,
+    "last_lr": 0.00001,
+    "momentum": 0.9,
+    "weight_decay": 0.00001,
+    "num_epochs": -1,
+    "print_freq": 100
+}
