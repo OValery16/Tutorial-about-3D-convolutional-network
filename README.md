@@ -48,6 +48,10 @@ From my point of view, there are two main drawbacks compared to the other method
 
 For this tutorial, we will use the [20BN-jester Dataset V1](https://20bn.com/datasets/jester). The 20BN-JESTER dataset is a large collection of densely-labeled video clips that show humans performing pre-definded hand gestures in front of a laptop camera or webcam. You can download it on their website.
 
+After downloading all parts, extract using:
+
+cat 20bn-jester-v1-?? | tar zx
+
 Before to start implementing any network, I advice you to take a quick look of the video (set of images). It is essential that you understand what you need to predict.
 
 ## The network
