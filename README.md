@@ -78,9 +78,9 @@ For this network, I got a accuracy of 85% for the validation set. Since there is
 
 Below you can find the training curves obtained via tensorboard.
 
-![training_loss](/images/training_loss.png) ![training_top1](/images/training_top1.png) ![training_top5](/images/training_top5.png)
+![training_loss](/images/training_loss.PNG) ![training_top1](/images/training_top1.PNG) ![training_top5](/images/training_top5.PNG)
 
-![training_loss](/images/val_loss.png) ![training_top1](/images/val_acc.png) ![training_top5](/images/val_acc_top5.png)
+![training_loss](/images/val_loss.PNG) ![training_top1](/images/val_acc.PNG) ![training_top5](/images/val_acc_top5.PNG)
 
  
 
