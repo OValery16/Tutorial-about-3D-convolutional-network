@@ -114,7 +114,7 @@ First, we can observe that the accuracy on the training set is closed to 100%, b
 
 Several things can be done:
 * Go deeper: however when you go deeper, you meet the [Vanishing gradient problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem). If you went to go deeper, I strongly advice you a more advance 3D CNN architecture such as this [work](https://github.com/kenshohara/3D-ResNets-PyTorch)
-* Add more data: Adding more data is always good for the generalization. In our situation we work with a fixed size dataset. Augmenting the size of our dataset require data augmentation technique.
+* Add more data: Adding more data is always good for the generalization. In our situation we work with a fixed size dataset. Augmenting the size of our dataset requires data augmentation technique.
 * Combining several predicators to improve the overall prediction. This approach is called Ensemble learning.
 
 ## Ensemble learning
