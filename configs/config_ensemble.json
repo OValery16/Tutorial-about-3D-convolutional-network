@@ -1,6 +1,6 @@
 {
-    "model_name": "jester_conv6",
-    "checkpoint": "trainings/jpeg_model/jester_conv6/model_best.pth.tar",
+    "model_name": "classifier",
+    "checkpoint": "trainings/jpeg_model/classifier/model_best.pth.tar",
 
     "train_data_folder": "/20bn-jester-v1/",
     "val_data_folder": "/20bn-jester-v1/",

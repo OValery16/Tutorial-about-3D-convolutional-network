@@ -106,6 +106,53 @@ Below you can find the training curves obtained via tensorboard.
 
 ![training_loss](/images/val_loss.PNG) ![training_top1](/images/val_acc.PNG) ![training_top5](/images/val_acc_top5.PNG)
 
+## Better accuracy
+
+An accuracy of 85% on the validation is nice. However, can we do better ? 
+
+First, we can observe that the accuracy on the training set is closed to 100%, but the accuracy on the validation set plateau at 85%. There is a difference of 15%, which can be explained by the fact that our model tends to overfit our training dataset. What can you do against that ? 
+
+Several things can be done:
+* Go deeper: however when you go deeper, you meet the [Vanishing gradient problem](https://en.wikipedia.org/wiki/Vanishing_gradient_problem). If you went to go deeper, I strongly advice you a more advance #D CNN architecture such as this [work](https://github.com/kenshohara/3D-ResNets-PyTorch)
+* Add more data: Adding more data is always good for the generalization. In our situation we work with a fixed size dataset. Augmenting the size of our dataset require data augmentation technique.
+* Combining several predicators to improve the overall prediction. This approach is called Ensemble learning.
+
+## Ensemble learning
+
+Let's take a simple example. We have 3 binary classifiers (A,B,C) with a 70% accuracy. A,B,C can be based on 3D convolution architecture as mentioned previously. 
+
+For a majority vote with 3 members we can expect 4 outcomes:
+
+All three are correct
+  0.7 * 0.7 * 0.7
+= 0.3429
+
+Two are correct
+  0.7 * 0.7 * 0.3
++ 0.7 * 0.3 * 0.7
++ 0.3 * 0.7 * 0.7
+= 0.4409
+
+Two are wrong
+  0.3 * 0.3 * 0.7
++ 0.3 * 0.7 * 0.3
++ 0.7 * 0.3 * 0.3
+= 0.189
+
+All three are wrong
+  0.3 * 0.3 * 0.3
+= 0.027
+
+We see that most of the times (~44%) the majority vote corrects an error. This majority vote ensemble will be correct an average of ~78% (0.3429 + 0.4409 = 0.7838).
+
+## Stacking and 3D CNN
+
+In this implementation, we train first 5 3D CNN separately. Each of them has an accuracy of ~84-85% on the validation set. Then, we combine the predictions in order to increase the overall prediction accuracy.
+
+[stacking](images/ensemble.png)
+
+And we obtain an accuracy of 88.16% on the valudation set.
+
 ## Important remark
 
 Code based off this [GulpIO-benchmarks](https://github.com/TwentyBN/GulpIO-benchmarks) implementation.
