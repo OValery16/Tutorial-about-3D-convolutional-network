@@ -149,7 +149,7 @@ We see that most of the times (~44%) the majority vote corrects an error. This m
 
 In this implementation, we train first 5 3D CNN separately. Each of them has an accuracy of ~84-85% on the validation set. Then, we combine the predictions in order to increase the overall prediction accuracy.
 
-[stacking](images/ensemble.png)
+![stacking](images/ensemble.png)
 
 And we obtain an accuracy of 88.16% on the valudation set.
 
